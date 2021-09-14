@@ -1,0 +1,12 @@
+<hr>
+<ul class="list-group" *ngIf='user'>
+    <li class="list-group-item ">{{'user.name' | transloco}} {{user.name}}</li>
+    <li class="list-group-item">{{'user.userName' | transloco}} {{user.username}}</li>
+    <li class="list-group-item">{{'user.email' | transloco}} {{user.email}}</li>
+    <li class="list-group-item"> {{'user.address' | transloco}}{{user.address.street}} {{'user.street' | transloco}}, {{user.address.suite}}, {{user.address.city}}</li>
+    <li class="list-group-item">{{'user.phone' | transloco}} {{user.phone}}</li>
+    <li class="list-group-item">{{'user.webSite' | transloco}} {{user.website}}</li>
+    <li class="list-group-item">{{'user.company' | transloco}} {{user.company.name}}</li>
+  </ul>
+  <hr>
+  <button type="button" class="btn btn-primary" (click)="onGoBack()">{{'user.goBack' | transloco}}</button>

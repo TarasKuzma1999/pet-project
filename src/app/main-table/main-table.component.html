@@ -1,0 +1,26 @@
+<hr>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">{{'table.search' | transloco}}</span>
+    </div>
+    <input type="text"  [(ngModel)]="filterValue" class="form-control" [placeholder]="'table.searchBy' | transloco" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<hr>
+<table class="table table-hover" style="cursor: pointer">
+    <thead>        
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">{{ 'table.name' | transloco}}</th>
+        <th scope="col">{{ 'table.username' | transloco}}</th>
+        <th scope="col">{{ 'table.email' | transloco}}</th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let user of users | tableFilter: filterValue: "username"'>        
+      <tr (click) = "onSelectUser(user.id, user.username)">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+      </tr>     
+    </tbody>
+  </table>

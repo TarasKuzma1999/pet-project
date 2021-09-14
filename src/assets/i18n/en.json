@@ -1,0 +1,20 @@
+{
+    "table": {
+        "search": "Search by",
+        "searchBy": "User name",
+        "name": "Name",
+        "username": "User name",
+        "email": "Email"
+    },
+    "user": {
+        "name": "Name:",
+        "userName": "User Name:",
+        "email": "Email:",
+        "address": "Address:",
+        "street": "str",
+        "phone": "Phone:",
+        "webSite": "Web Site:",
+        "company": "Company:",
+        "goBack": "Go Back"
+    }
+}
