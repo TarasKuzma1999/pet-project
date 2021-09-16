@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainTableComponent } from './main-table/main-table.component';
 import { TableFilterPipe } from './table-filter.pipe';
 import { UserComponent } from './user/user.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     BsDropdownModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

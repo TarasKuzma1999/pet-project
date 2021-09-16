@@ -4,9 +4,9 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 const appRouters: Routes = [
-    { path: '', component: MainTableComponent },    
+    { path: '', component: MainTableComponent },
     { path: 'features/:id/:username', component: UserComponent },
-    { path: '**', redirectTo:'/'}
+    { path: '**', redirectTo: '/' }
 ]
 
 
