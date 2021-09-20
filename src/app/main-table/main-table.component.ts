@@ -1,15 +1,17 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-table',
   templateUrl: './main-table.component.html',
   styleUrls: ['./main-table.component.css']
 })
-export class MainTableComponent implements OnInit {
+export class MainTableComponent implements OnInit, OnDestroy {
   users!: any
   filterValue = '';
+  private getUsersSub!: Subscription;
   itemCount = 5;
 
   constructor(private http: HttpClient,
@@ -18,7 +20,7 @@ export class MainTableComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/users').subscribe(data => {
+    this.getUsersSub = this.http.get('https://jsonplaceholder.typicode.com/users').subscribe(data => {
       this.users = data
       console.log(this.users)
     })
@@ -30,6 +32,10 @@ export class MainTableComponent implements OnInit {
 
   onScroll() {
     this.itemCount += 5
+  }
+
+  ngOnDestroy() {
+    this.getUsersSub.unsubscribe()
   }
 
 }
